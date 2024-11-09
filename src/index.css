@@ -1,31 +1,150 @@
 body {
   margin: 0;
   padding: 0;
-
+  box-sizing: border-box;
   background-color: #845afc;
 }
 .main {
   background-color: #1b1a41;
   border-radius: 0.3rem;
   width: 30%;
-  height: max-content;
-  color: white;
+  height: 636px; /* Fixed height for the parent div */
+  color: rgb(251, 251, 251);
   font-size: 0.8rem;
-  /* font-weight: 900; */
   font: 0.8em sans-serif;
   border: 1px solid #fcfcfc;
-
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
 }
+
+/* add.js todo css  */
 .App_To {
   align-items: center;
   justify-items: center;
-  border: 1px solid #000;
   width: 100%;
   margin-top: 4rem;
 }
-.addnote_main{
-  border: 1px solid #ff0000;
+
+.add_input input:nth-child(1) {
+  border: 1px solid #845afc;
+  width: 70%;
+  margin-top: 10px;
+  background-color: #1b1a41;
+  color: white;
+  padding: 10px 15px 10px 15px;
+
 }
-.task_list{
-  border: 1px solid #ffffff;
+.add_input input:nth-child(1)::placeholder {
+  color: #9d84e27f;
+  font-weight: 600;
+  padding-left: 5px; 
+}
+.add_input input:nth-of-type(2) {
+  border: 1px solid #845afc;
+  width: 50%;
+  margin-top: 10px;
+  background-color: #1b1a41;
+  color: white;
+  padding: 10px 15px 10px 15px;
+  border-right:none;
+
+}
+.add_input input:nth-of-type(2)::placeholder {
+  color: #9d84e27f;
+  font-weight: 600;
+  padding-left: 5px; /* Purple color */
+}
+
+.add_input button{
+  height: 38px;
+  width: 20%;
+  border: 1px solid #845afc;
+  cursor: pointer;
+  background-color: #845afc;
+  color: white;
+  font-weight: 600;
+  border-left: none;
+}
+
+.add_input input:focus{
+  outline: none;
+}
+
+/* todolist.js css to show the all todo */
+.task_list {
+  /* border: 1px solid #af1a1a; */
+  border-top:2px solid black;
+  margin-top: 20px;
+  width: 100%;
+  flex: 1;
+  overflow: auto; 
+  word-wrap: break-word;
+}
+.task_list ul li {
+  list-style: none;
+  text-align: left;
+  font-size: 1rem;
+  width: 86.8%;
+  margin: 7px;
+  border-radius: 10px;
+  padding: 7px;
+  /* border: 2px solid #000; */
+  margin-top: 20px;
+  background-color:#855afcb3;
+}
+.first-span{
+  /* border: 1px solid #000; */
+  margin-bottom: -12px;
+  /* color:#1b1a41; */
+  color: rgba(255, 255, 255, 0.779);
+}
+.second-span{
+  /* border: 1px solid #000; */
+  /* color:#000000; */
+  color: rgba(255, 255, 255, 0.779);
+}
+.task_list ul button{
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.779);
+  border: none;
+  border-radius: 5px
+}
+
+/* todo.js update css  */
+
+.third-span{
+  /* border: 1px solid #000; */
+  margin-bottom: 12px;
+  margin-left: 10px;
+  /* color:#1b1a41; */
+  color: rgba(255, 255, 255, 0.779);
+}
+.fourth-span{
+  margin-left: 10px;
+  /* border: 1px solid #000; */
+  /* color:#000000; */
+  color: rgba(255, 255, 255, 0.779);
+}
+.task_list ul button{
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.779);
+  border: none;
+  border-radius: 5px
+}
+
+/* update.js css */
+.update_todo{
+  overflow: auto;
+  padding: 10px;
+}
+
+.update_todo input{
+   border: 1px solid #845afc;
+  background-color: #1b1a41;
+  color: white;
+  padding: 10px 15px 10px 15px;
 }

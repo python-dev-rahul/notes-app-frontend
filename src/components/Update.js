@@ -23,16 +23,16 @@ const Update = ({ note, setTasks, onCancel }) => {
   };
 
   return (
-    <div>
+    <div className="update_todo">
       <input
         type="text"
         value={updatedTask.title}
-        onChange={(e) => setUpdatedTask({ ...updatedTask, title: e.target.value })}
-      />
+        onChange={(e) => setUpdatedTask({ ...updatedTask, title: e.target.value })} placeholder="title"
+      /><br/><br/>
       <textarea
         value={updatedTask.body}
         onChange={(e) => setUpdatedTask({ ...updatedTask, body: e.target.value })}
-      />
+      /><br/><br/>
       <button onClick={handleUpdate}>Update</button>
       <button onClick={onCancel}>Cancel</button>
     </div>

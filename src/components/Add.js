@@ -20,17 +20,17 @@ const Add = ({ setTasks, onAdd }) => {
   };
 
   return (
-    <div>
+    <div className='add_input'>
       <input
         type="text"
         value={newTask.title}
         onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-        placeholder="Title"
-      />
-      <textarea
+        placeholder="What is the task today?" 
+      /><br/>
+      <input
         value={newTask.body}
         onChange={(e) => setNewTask({ ...newTask, body: e.target.value })}
-        placeholder="Body"
+        placeholder="Body" 
       />
       <button onClick={handleAddTask}>Add Task</button>
     </div>

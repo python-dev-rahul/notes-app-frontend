@@ -67,8 +67,8 @@ const ToDoList = () => {
             {editingNoteId ? (
               noteToEdit && (
                 <li key={noteToEdit.id}>
-                  <div>{noteToEdit.title}</div>
-                  <div>{noteToEdit.body}</div>
+                  <div className='third-span'>Title:{noteToEdit.title}</div >
+                  <div className='fourth-span'>Body:{noteToEdit.body}</div >
                   <Update
                     note={noteToEdit}
                     setTasks={setTasks}
@@ -82,8 +82,8 @@ const ToDoList = () => {
               // Show all notes if not in edit mode
               tasks.map((task) => (
                 <li key={task.id}>
-                  <div>{task.title}</div>
-                  <div>{task.body}</div>
+                  <div  className='first-span'>Title:{task.title}</div ><br/>
+                  <div className='second-span'>Body:{task.body}</div ><br/>
                   <button onClick={() => handleEditClick(task.id)}>Edit</button>
                   <Delete
                     noteId={task.id}
