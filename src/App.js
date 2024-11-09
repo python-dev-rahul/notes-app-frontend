@@ -1,9 +1,9 @@
-import "./App.css";
-
+import React from 'react';
+import ToDoList from './components/ToDoList'; // Import ToDoList component
 function App() {
   return (
     <div className="App">
-      <h1>Notes App</h1>
+      <ToDoList />
     </div>
   );
 }
