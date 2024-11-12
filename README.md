@@ -9,7 +9,7 @@ Features
 
 Getting Started
         1. Clone the Repository
-            git clone <repository-url>
+            git clone "https://github.com/python-dev-rahul/notes-app-frontend.git"
             cd todo-frontend
         2. Install Dependencies
             Make sure you have Node.js installed, then run:
