@@ -25,8 +25,6 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
-
-/* Responsive adjustments for mobile devices */
 @media (max-width: 500px) {
   .main {
     width: 90%;
@@ -43,32 +41,33 @@ body {
   margin-top: 2rem;
 }
 
-.add_input input:nth-child(1) {
+.add_input input:nth-of-type(1) {
   border: 1px solid #845afc;
   width: 70%;
   margin-top: 10px;
   background-color: #1b1a41;
   color: white;
   padding: 10px 15px 10px 15px;
+  margin-left: 10px;
 }
-.add_input input:nth-child(1)::placeholder {
+.add_input input:nth-of-type(1)::placeholder {
   color: #9d84e27f;
   font-weight: 600;
   padding-left: 5px;
 }
 .add_input input:nth-of-type(2) {
   border: 1px solid #845afc;
-  width: 50%;
+  width: 70%;
   margin-top: 10px;
   background-color: #1b1a41;
   color: white;
   padding: 10px 15px 10px 15px;
-  border-right: none;
+  margin-left: 5px;
 }
 .add_input input:nth-of-type(2)::placeholder {
   color: #9d84e27f;
   font-weight: 600;
-  padding-left: 5px; /* Purple color */
+  padding-left: 5px;
 }
 
 .add_input button {
@@ -80,18 +79,19 @@ body {
   color: white;
   font-weight: 600;
   border-left: none;
+  margin-top: 10px;
 }
 
 .add_input input:focus {
   outline: none;
 }
-/* Focus outline removal */
-.add_input input:focus, 
-.add_input button:focus {
+.add_input input:focus{
   outline: none;
+} 
+.add_input button:focus {
+  outline:1px solid white;
 }
 
-/* Adjustments for smaller screens */
 @media (max-width: 500px) {
   .add_input input:nth-child(1) {
     width: 72%;
@@ -115,6 +115,7 @@ body {
   word-wrap: break-word;
 }
 .task_list ul li {
+  /* border: 5px  solid  #000; */
   list-style: none;
   text-align: left;
   font-size: 1rem;
@@ -122,31 +123,44 @@ body {
   margin: 5px;
   border-radius: 10px;
   padding: 7px;
-  /* border: 2px solid #000; */
   margin-top: 20px;
   background-color: #855afcb3;
 }
 .first-span {
-  /* border: 1px solid #000; */
   margin-bottom: -12px;
-  /* color:#1b1a41; */
   color: rgba(255, 255, 255, 0.779);
 }
 .second-span {
-  /* border: 1px solid #000; */
-  /* color:#000000; */
   color: rgba(255, 255, 255, 0.779);
 }
-.task_list ul button {
+.task_list ul li button {
   margin-right: 10px;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.779);
   border: none;
   border-radius: 5px;
+  /* border: 4px solid #000; */
+  margin-top: 5px;
+}
+/* For custom thin scrollbar */
+.task_list::-webkit-scrollbar {
+  width: 4px; /* Thin scrollbar */
+}
+
+.task_list::-webkit-scrollbar-track {
+  background: #1b1a41; /* Scrollbar track color */
+}
+
+.task_list::-webkit-scrollbar-thumb {
+  background-color: #845afc; /* Scrollbar thumb color */
+  border-radius: 10px; /* Round corners */
+}
+
+.task_list::-webkit-scrollbar-thumb:hover {
+  background-color: #7048e8; /* Thumb color on hover */
 }
 @media (max-width: 500px) {
   .task_list {
-    /* border: 1px solid #af1a1a; */
     border-top: 2px solid black;
     margin-top: 20px;
     width: 100%;
@@ -162,7 +176,6 @@ body {
     margin:34px;
     border-radius: 10px;
     padding: 10px;
-    /* border: 2px solid #000; */
     margin-top: 20px;
     background-color: #855afcb3;
   }
@@ -170,14 +183,10 @@ body {
     padding: 0;
   }
   .first-span {
-    /* border: 1px solid #000; */
     margin-bottom: -12px;
-    /* color:#1b1a41; */
     color: rgba(255, 255, 255, 0.779);
   }
   .second-span {
-    /* border: 1px solid #000; */
-    /* color:#000000; */
     color: rgba(255, 255, 255, 0.779);
   }
   .task_list ul button {
@@ -191,16 +200,12 @@ body {
 
 
 .third-span {
-  /* border: 1px solid #000; */
   margin-bottom: 5px;
   margin-left: 10px;
-  /* color:#1b1a41; */
   color: rgba(255, 255, 255, 0.779);
 }
 .fourth-span {
   margin-left: 10px;
-  /* border: 1px solid #000; */
-  /* color:#000000; */
   color: rgba(255, 255, 255, 0.779);
 }
 .task_list ul button {
@@ -223,3 +228,5 @@ body {
   color: white;
   padding: 10px 15px 10px 15px;
 }
+
+

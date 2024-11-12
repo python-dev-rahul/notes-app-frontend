@@ -21,17 +21,22 @@ const Add = ({ setTasks, onAdd }) => {
 
   return (
     <div className='add_input'>
+      <label htmlFor="taskTitle">Task Title:</label>
       <input
         type="text"
+        id="taskTitle"
         value={newTask.title}
         onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
         placeholder="What is the task today?" 
       /><br/>
+      <label htmlFor="taskBody">Task Body:</label>
       <input
+        type="text"
+        id="taskBody"
         value={newTask.body}
         onChange={(e) => setNewTask({ ...newTask, body: e.target.value })}
         placeholder="Body" 
-      />
+      /><br/>
       <button onClick={handleAddTask}>Add Task</button>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { updateNote } from "../services/api";
-import { toast } from 'react-toastify';  // Importing toast for notifications
+import { toast } from 'react-toastify';  
 
 const Update = ({ note, setTasks, onCancel }) => {
   const [updatedTask, setUpdatedTask] = useState({
@@ -9,6 +9,11 @@ const Update = ({ note, setTasks, onCancel }) => {
   });
 
   const handleUpdate = async () => {
+    if (!updatedTask.title || !updatedTask.body) {
+      toast.error("Please fill out both title and body fields!");  // Error toast if fields are empty
+      return;
+    }
+
     try {
       const updatedNote = await updateNote(note.id, updatedTask);  // Calling API to update the note
       setTasks(prevTasks =>
@@ -27,14 +32,18 @@ const Update = ({ note, setTasks, onCancel }) => {
       <input
         type="text"
         value={updatedTask.title}
-        onChange={(e) => setUpdatedTask({ ...updatedTask, title: e.target.value })} placeholder="title"
+        onChange={(e) => setUpdatedTask({ ...updatedTask, title: e.target.value })}
+        placeholder="Title"
+        aria-label="Title"
       /><br/><br/>
       <textarea
         value={updatedTask.body}
         onChange={(e) => setUpdatedTask({ ...updatedTask, body: e.target.value })}
+        placeholder="Body"
+        aria-label="Body" 
       /><br/><br/>
-      <button onClick={handleUpdate}>Update</button>
-      <button onClick={onCancel}>Cancel</button>
+      <button onClick={handleUpdate} aria-label="Update Note">Update</button>
+      <button onClick={onCancel} aria-label="Cancel Update">Cancel</button>
     </div>
   );
 };
