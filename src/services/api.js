@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "https://notes-app-epds.onrender.com/api";
+const BASE_URL = "https://notes-app-backend-p8tf.onrender.com/api";
 
 // Fetch all notes
 export const getNotes = async () => {
